@@ -112,7 +112,23 @@ public class FortuneTellerFrame extends JFrame {
     }
 
     private void setupFrame() {
-        // TODO
+        this.setLayout(new BorderLayout());
+        this.setTitle("Fortune Teller");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+
+        int frameWidth = (int) (screenSize.getWidth() * 0.75);
+        int frameHeight = (int) (screenSize.getHeight() * 0.75);
+
+        this.setSize(frameWidth, frameHeight);
+
+        int x = (screenSize.width - frameWidth) / 2;
+        int y = (screenSize.height - frameHeight) / 2;
+        this.setLocation(x, y);
+
+        this.setVisible(true);
     }
 
     private void displayRandomFortune() {

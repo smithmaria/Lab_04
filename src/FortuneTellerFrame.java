@@ -25,7 +25,13 @@ public class FortuneTellerFrame extends JFrame {
         buttonFont = new Font("Arial", Font.PLAIN, 16);
         fortuneFont = new Font("Georgia", Font.PLAIN, 16);
 
-        // TODO: initialize fortunes ArrayList, set up GUI components, set up frame
+        initializeComponents();;
+
+        createTopPanel();
+        createMiddlePane();
+        createBottomPanel();
+
+        setupFrame();
     }
 
     private void initializeComponents() {
@@ -46,15 +52,63 @@ public class FortuneTellerFrame extends JFrame {
     }
 
     private void createTopPanel() {
-        // TODO
+        JPanel topPanel = new JPanel();
+        topPanel.setBackground(new Color(75, 0, 130));
+
+        ImageIcon fortuneIcon = new ImageIcon("src/resources/crystal-ball.jpg");
+
+        titleLabel = new JLabel("Fortune Teller", fortuneIcon, SwingConstants.CENTER);
+
+        titleLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
+        titleLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+
+        titleLabel.setFont(titleFont);
+        titleLabel.setForeground(Color.WHITE);
+
+        topPanel.add(titleLabel);
+
+        this.add(topPanel, BorderLayout.NORTH);
     }
 
     private void createMiddlePane() {
-        // TODO
+        fortuneTextArea = new JTextArea(10, 40);
+        fortuneTextArea.setFont(fortuneFont);
+        fortuneTextArea.setEditable(false);
+        fortuneTextArea.setLineWrap(true);
+        fortuneTextArea.setWrapStyleWord(true);
+        fortuneTextArea.setBackground(new Color(255, 250, 240));
+
+        scrollPane = new JScrollPane(fortuneTextArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+        JPanel middlePanel = new JPanel();
+        middlePanel.add(scrollPane);
+
+        this.add(middlePanel, BorderLayout.CENTER);
     }
 
     private void createBottomPanel() {
-        // TODO
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setBackground(new Color(75, 0, 130));
+
+        readFortuneButton = new JButton("Read My Fortune!");
+        readFortuneButton.setFont(buttonFont);
+        readFortuneButton.setBackground(new Color(218, 165, 32));
+        readFortuneButton.setForeground(Color.BLACK);
+
+        readFortuneButton.addActionListener(e -> displayRandomFortune());
+
+        quitButton = new JButton("Quit");
+        quitButton.setFont(buttonFont);
+        quitButton.setBackground(new Color(178, 34, 34));
+        quitButton.setForeground(Color.WHITE);
+
+        quitButton.addActionListener(e -> System.exit(0));
+
+        bottomPanel.add(readFortuneButton);
+        bottomPanel.add(quitButton);
+
+        this.add(bottomPanel, BorderLayout.SOUTH);
     }
 
     private void setupFrame() {

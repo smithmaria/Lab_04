@@ -21,6 +21,8 @@ public class FortuneTellerFrame extends JFrame {
     public FortuneTellerFrame() {
         random = new Random();
 
+        this.setLayout(new BorderLayout());
+
         titleFont = new Font("Arial", Font.BOLD, 48);
         buttonFont = new Font("Arial", Font.PLAIN, 16);
         fortuneFont = new Font("Georgia", Font.PLAIN, 16);
@@ -112,7 +114,6 @@ public class FortuneTellerFrame extends JFrame {
     }
 
     private void setupFrame() {
-        this.setLayout(new BorderLayout());
         this.setTitle("Fortune Teller");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

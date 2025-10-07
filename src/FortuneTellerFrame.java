@@ -55,7 +55,7 @@ public class FortuneTellerFrame extends JFrame {
 
     private void createTopPanel() {
         JPanel topPanel = new JPanel();
-        topPanel.setBackground(new Color(75, 0, 130));
+        topPanel.setBackground(Color.WHITE);
 
         ImageIcon fortuneIcon = new ImageIcon("src/resources/crystal-ball.jpg");
 
@@ -65,7 +65,7 @@ public class FortuneTellerFrame extends JFrame {
         titleLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
         titleLabel.setFont(titleFont);
-        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setForeground(new Color(100, 89, 161));
 
         topPanel.add(titleLabel);
 
@@ -78,7 +78,7 @@ public class FortuneTellerFrame extends JFrame {
         fortuneTextArea.setEditable(false);
         fortuneTextArea.setLineWrap(true);
         fortuneTextArea.setWrapStyleWord(true);
-        fortuneTextArea.setBackground(new Color(255, 250, 240));
+        fortuneTextArea.setBackground(new Color(231, 229, 244));
 
         scrollPane = new JScrollPane(fortuneTextArea);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -91,7 +91,7 @@ public class FortuneTellerFrame extends JFrame {
 
     private void createBottomPanel() {
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setBackground(new Color(75, 0, 130));
+        bottomPanel.setBackground(Color.WHITE);
 
         readFortuneButton = new JButton("Read My Fortune!");
         readFortuneButton.setFont(buttonFont);
@@ -103,7 +103,7 @@ public class FortuneTellerFrame extends JFrame {
         quitButton = new JButton("Quit");
         quitButton.setFont(buttonFont);
         quitButton.setBackground(new Color(178, 34, 34));
-        quitButton.setForeground(Color.WHITE);
+        quitButton.setForeground(Color.BLACK);
 
         quitButton.addActionListener(e -> System.exit(0));
 
